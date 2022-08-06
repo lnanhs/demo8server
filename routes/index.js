@@ -82,6 +82,10 @@ router.post('/create', async function (req, res) {
 
     res.redirect('/')
 })
-
+router.get('/getUser', function (req,res){
+    STUDENT.find({},function (err,data){
+        res.send(data)
+    });
+})
 
 module.exports = router;
